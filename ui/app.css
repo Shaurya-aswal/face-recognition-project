@@ -1,55 +1,283 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: linear-gradient(180deg, #f8f9fa 0%, #e2e8f0 100%);
+    color: #2d3748;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(90deg, #ffffff 0%, #f8f9fa 100%);
+    border-bottom: 1px solid #e2e8f0;
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c7a7b;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 16px;
+}
+
+.nav-link {
+    color: #4a5568;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #2c7a7b;
+}
+
+/* Sections */
+.section {
+    display: none;
+    padding: 48px 32px;
+}
+
+.section.active {
+    display: block;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 80px 32px;
+    background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 8px;
+}
+
+.hero h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #2d3748;
+}
+
+.hero p {
+    font-size: 1.125rem;
+    color: #718096;
+    max-width: 500px;
+    margin: 0 auto 24px;
+}
+
+.hero .btn {
+    padding: 12px 24px;
+    background: linear-gradient(90deg, #2c7a7b 0%, #319795 100%);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.hero .btn:hover {
+    background: linear-gradient(90deg, #285e61 0%, #2a7a77 100%);
+    transform: translateY(-2px);
+}
+
+/* Card Grid */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 24px;
+    padding: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .card-wrapper {
-    margin: 5% 0;
-  }
-  
-/* You can adjust the image size by increasing/decreasing the width, height */
+    margin: 16px 0;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    text-align: center;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    border-color: #2c7a7b;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
 .custom-circle-image {
-  width: 10vw; /* note i used vw not px for better responsive */
-  height: 10vw;
+    width: 8vw;
+    height: 8vw;
+    margin: 16px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
 }
 
 .custom-circle-image img {
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 12px;
 }
 
 .card-title {
-  letter-spacing: 1.1px;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #2d3748;
+    letter-spacing: 1.1px;
 }
 
-.card-text {
-  font-family: MerriweatherRegular;
-  font-size: 22px;
-  line-height: initial;
+/* Classifier Section */
+.container h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 24px;
+    text-align: center;
 }
 
-.dropzone {
-  border-style: dashed;
+.classifier-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+.col-upload {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.btn {
+    display: block;
+    margin: 16px auto;
+    padding: 12px 24px;
+    background: linear-gradient(90deg, #2c7a7b 0%, #319795 100%);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, #285e61 0%, #2a7a77 100%);
+    transform: translateY(-2px);
+}
 
 .error {
-  font-family: MerriweatherRegular;
-  font-size: 30px;
-  line-height: initial;
-  color: blue;
-  text-align: center;
+    font-size: 1rem;
+    color: #c53030;
+    text-align: center;
+    padding: 16px;
+    background: #fef5f5;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    font-weight: 500;
 }
 
 #classTable {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    overflow: hidden;
 }
 
-#classTable td, #classTable th {
-  border: 1px solid #ddd;
-  padding: 8px;
+#classTable th,
+#classTable td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
 }
 
 #classTable th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #4CAF50;
-  color: white;
+    background: linear-gradient(90deg, #2c7a7b 0%, #319795 100%);
+    color: #fff;
+    font-weight: 600;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+#classTable td {
+    color: #2d3748;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+
+    .hero h1 {
+        font-size: 1.75rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .container h2 {
+        font-size: 1.25rem;
+    }
+
+    .card-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        padding: 16px;
+    }
+
+    .custom-circle-image {
+        width: 12vw;
+        height: 12vw;
+    }
+
+    .classifier-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .col-upload,
+    .col-results {
+        width: 100%;
+    }
+
+    #classTable th,
+    #classTable td {
+        font-size: 0.875rem;
+        padding: 8px;
+    }
 }

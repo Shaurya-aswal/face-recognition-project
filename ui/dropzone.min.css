@@ -1,99 +1,119 @@
+
 .dropzone {
-  min-height: 150px;
-  border: 2px dashed rgba(0, 0, 0, 0.3);
-  background: white;
-  padding: 20px;
-  cursor: pointer;
+    min-height: 180px;
+    border: 2px dashed #e2e8f0;
+    background: #fff;
+    padding: 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.dropzone:hover {
+    border-color: #2c7a7b;
 }
 
 .dropzone .dz-message {
-  text-align: center;
-  margin: 2em 0;
+    text-align: center;
+    margin: 2em 0;
+    color: #718096;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+}
+
+.dropzone .dz-message img {
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+.dropzone .dz-message:hover img {
+    opacity: 0.8;
 }
 
 .dropzone .dz-preview {
-  position: relative;
-  display: inline-block;
-  margin: 16px;
-  min-height: 100px;
-  vertical-align: top;
+    position: relative;
+    display: inline-block;
+    margin: 12px;
+    min-height: 80px;
+    vertical-align: top;
 }
 
 .dropzone .dz-preview .dz-image {
-  width: 120px;
-  height: 120px;
-  border-radius: 20px;
-  overflow: hidden;
+    width: 100px;
+    height: 100px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
 }
 
 .dropzone .dz-preview .dz-image img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  transition: transform 0.3s ease;
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: transform 0.2s ease;
 }
 
 .dropzone .dz-preview:hover .dz-image img {
-  transform: scale(1.05);
-  filter: blur(8px);
+    transform: scale(1.02);
 }
 
 .dropzone .dz-preview .dz-details {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 2em 1em;
-  font-size: 13px;
-  color: rgba(0, 0, 0, 0.9);
-  opacity: 0;
-  transition: opacity 0.2s;
-  text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1.5em 1em;
+    font-size: 12px;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.2s;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    font-family: 'Inter', sans-serif;
 }
 
 .dropzone .dz-preview:hover .dz-details {
-  opacity: 1;
+    opacity: 1;
 }
 
 .dropzone .dz-preview .dz-success-mark,
 .dropzone .dz-preview .dz-error-mark {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -27px 0 0 -27px;
-  opacity: 0;
-  pointer-events: none;
-  animation-duration: 3s;
-  animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -27px 0 0 -27px;
+    opacity: 0;
+    pointer-events: none;
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .dropzone .dz-preview.dz-success .dz-success-mark {
-  animation-name: passing-through;
-  opacity: 1;
+    animation-name: passing-through;
+    opacity: 1;
 }
 
 .dropzone .dz-preview.dz-error .dz-error-mark {
-  animation-name: slide-in;
-  opacity: 1;
+    animation-name: slide-in;
+    opacity: 1;
 }
 
 .dropzone .dz-preview .dz-progress {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  height: 16px;
-  width: 80px;
-  margin: -8px 0 0 -40px;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 8px;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 1000;
-  animation: pulse 6s ease infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 12px;
+    width: 80px;
+    margin: -6px 0 0 -40px;
+    background: #e2e8f0;
+    border-radius: 6px;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1000;
 }
 
 .dropzone .dz-upload {
-  background: linear-gradient(to bottom, #666, #444);
-  width: 0;
-  height: 100%;
-  transition: width 0.3s ease-in-out;
+    background: linear-gradient(90deg, #2c7a7b 0%, #319795 100%);
+    width: 0;
+    height: 100%;
+    transition: width 0.3s ease-in-out;
 }
